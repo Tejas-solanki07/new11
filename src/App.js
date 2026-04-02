@@ -10,7 +10,7 @@ import FAQ from "./components/FAQ";
 import Success from "./components/Success";
 import Terms from "./components/Terms";
 
-// ✅ Import the new Ticket Selection Component
+// ✅ Import the Ticket Selection Component
 import TicketSelection from "./components/TicketSelection";
 
 import "./App.css";
@@ -18,14 +18,8 @@ import "./App.css";
 /* 👉 Home Page Layout */
 function Home() {
   const handleTicketSelect = (ticket) => {
-    console.log("User selected ticket:", ticket);
-    
-    // You can later add navigation to booking form or store in state
-    // For now, showing alert (you can improve this later)
-    alert(`🎟️ You selected ${ticket.name} Ticket - ₹${ticket.price.toLocaleString('en-IN')}\n\nProceeding to booking...`);
-    
-    // Future improvement: Navigate to booking page with selected ticket
-    // navigate('/booking', { state: { selectedTicket: ticket } });
+    console.log("Selected:", ticket);
+    // You can later navigate to a booking form
   };
 
   return (
@@ -35,7 +29,7 @@ function Home() {
       <About />
       <Highlights />
       
-      {/* ✅ NEW TICKET SELECTION SECTION */}
+      {/* Ticket Selection - Dark Premium Section */}
       <TicketSelection onSelect={handleTicketSelect} />
 
       <FAQ />
@@ -48,7 +42,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* ✅ MAIN PAGE with Ticket Selection */}
+        {/* ✅ MAIN PAGE */}
         <Route path="/" element={<Home />} />
 
         {/* ✅ SUCCESS PAGE */}
